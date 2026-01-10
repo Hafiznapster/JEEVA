@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+  /* Colors */
+  --bg-dark: #050510;
+  --bg-card: #0f1020;
+  --primary: #FFD700; /* Gold */
+  --primary-glow: rgba(255, 215, 0, 0.4);
+  --secondary: #00f2ff; /* Cyan accent */
+  --secondary-glow: rgba(0, 242, 255, 0.3);
+  --text-main: #ffffff;
+  --text-muted: #a0a0b0;
+  --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FDB931 100%);
+  --gradient-blue: linear-gradient(135deg, #00f2ff 0%, #0066ff 100%);
+  
+  /* Spacing */
+  --section-padding: 80px 20px;
+  
+  /* Fonts */
+  --font-main: 'Outfit', sans-serif;
+  --font-heading: 'Playfair Display', serif; /* For premium headers */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none; /* Hide default cursor for custom one */
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--gradient-gold);
+  color: #000;
+  font-weight: 700;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: none; /* Ensure consistent custom cursor */
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Animations classes can be added here or handled by anime.js */
