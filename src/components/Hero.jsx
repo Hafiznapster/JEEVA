@@ -15,7 +15,9 @@ const Hero = () => {
             <div className="hero-bg-shape shape-2"></div>
 
             <div className="hero-content">
-                <h2 className="hero-company" style={{ transitionDelay: '0ms' }}>Vertex - The Career Expert</h2>
+                <div className="hero-logo" style={{ transitionDelay: '0ms' }}>
+                    <img src="/vertex-logo.svg" alt="Vertex - The Career Expert" />
+                </div>
                 <h1 className="hero-title" style={{ transitionDelay: '200ms' }}>
                     Devoted to the <br />
                     <span>Highest Standards</span> in Education

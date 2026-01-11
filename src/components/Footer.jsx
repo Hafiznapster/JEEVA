@@ -10,10 +10,10 @@ const Footer = () => {
             background: 'var(--bg-dark)'
         }}>
             <div className="container">
-                <div style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--text-main)', marginBottom: '20px' }}>
-                    VERTEX EDUCATION
+                <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center' }}>
+                    <img src="/vertex-logo.svg" alt="Vertex - The Career Expert" style={{ height: '60px', width: 'auto' }} />
                 </div>
-                <p>&copy; {new Date().getFullYear()} Vertex Education. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Vertex - The Career Expert. All rights reserved.</p>
             </div>
         </footer>
     );

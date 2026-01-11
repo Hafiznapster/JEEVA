@@ -9,10 +9,10 @@
 }
 
 .navbar.scrolled {
-    background-color: rgba(5, 5, 16, 0.95);
+    background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     padding: 15px 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .container {
@@ -22,16 +22,22 @@
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--text-main);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
 }
 
-.logo span {
-    color: var(--primary);
+.logo-img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar.scrolled .logo-img {
+    height: 40px;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
 }
 
 .nav-links {
@@ -40,7 +46,7 @@
 }
 
 .nav-link {
-    color: var(--text-main);
+    color: #2d2d2d;
     font-weight: 500;
     position: relative;
     transition: color 0.3s;
@@ -76,5 +82,5 @@
 
 .nav-cta:hover {
     background-color: var(--primary);
-    color: #000;
+    color: #fff;
 }

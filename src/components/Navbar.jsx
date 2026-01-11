@@ -28,7 +28,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container">
                 <div className="logo cursor-scale">
-                    VERTEX <span>EDUCATION</span>
+                    <img src="/vertex-logo.svg" alt="Vertex - The Career Expert" className="logo-img" />
                 </div>
                 <ul className="nav-links">
                     <li><a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="nav-link cursor-scale">Home</a></li>

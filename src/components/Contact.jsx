@@ -20,7 +20,7 @@ const Contact = () => {
                             <div className="info-icon"><FaPhoneAlt /></div>
                             <div>
                                 <span>Phone</span>
-                                <div style={{ color: '#fff' }}>+91 88914 93387</div>
+                                <div className="info-value">+91 88914 93387</div>
                             </div>
                         </div>
 
@@ -28,7 +28,7 @@ const Contact = () => {
                             <div className="info-icon"><FaEnvelope /></div>
                             <div>
                                 <span>Email</span>
-                                <div style={{ color: '#fff' }}>vertexeducationn@gmail.com</div>
+                                <div className="info-value">vertexeducationn@gmail.com</div>
                             </div>
                         </div>
 
@@ -36,7 +36,7 @@ const Contact = () => {
                             <div className="info-icon"><FaMapMarkerAlt /></div>
                             <div>
                                 <span>Office</span>
-                                <div style={{ color: '#fff' }}>Kerala | Karnataka | Tamil Nadu</div>
+                                <div className="info-value">Kerala | Karnataka | Tamil Nadu</div>
                             </div>
                         </div>
                     </div>

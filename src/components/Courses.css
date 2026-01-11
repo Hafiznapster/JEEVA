@@ -1,6 +1,6 @@
 .courses-section {
     padding: var(--section-padding);
-    background-color: var(--bg-dark);
+    background-color: #f5f9f5;
 }
 
 .courses-grid {
@@ -15,7 +15,7 @@
     margin-bottom: 30px;
     /* For masonry effect */
     break-inside: avoid;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(159, 216, 164, 0.2);
     transition: transform 0.3s;
 }
 
@@ -28,7 +28,7 @@
     font-size: 1.5rem;
     color: var(--primary);
     margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(159, 216, 164, 0.3);
     padding-bottom: 15px;
 }
 
@@ -39,17 +39,18 @@
 }
 
 .course-tag {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--accent-yellow);
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
-    color: #ddd;
+    color: #2d2d2d;
     transition: background 0.3s;
+    font-weight: 500;
 }
 
 .course-tag:hover {
     background: var(--primary);
-    color: #000;
+    color: #fff;
 }
 
 @media (max-width: 768px) {

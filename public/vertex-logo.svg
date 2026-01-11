@@ -1,0 +1,18 @@
+<svg width="400" height="120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4169E1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#20B2AA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3CB371;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Arrow -->
+  <path d="M 30 80 L 30 40 L 50 40 L 70 20 L 50 40 L 70 40 L 70 80 Z" fill="url(#gradient)" transform="rotate(-20 50 50)"/>
+  
+  <!-- VERTEX Text -->
+  <text x="90" y="75" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="url(#gradient)">VERTEX</text>
+  
+  <!-- THE CAREER EXPERT Text -->
+  <text x="90" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#333" letter-spacing="3">THE CAREER EXPERT</text>
+</svg>

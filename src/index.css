@@ -2,16 +2,17 @@
 
 :root {
   /* Colors */
-  --bg-dark: #050510;
-  --bg-card: #0f1020;
-  --primary: #FFD700; /* Gold */
-  --primary-glow: rgba(255, 215, 0, 0.4);
-  --secondary: #00f2ff; /* Cyan accent */
-  --secondary-glow: rgba(0, 242, 255, 0.3);
-  --text-main: #ffffff;
-  --text-muted: #a0a0b0;
-  --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FDB931 100%);
-  --gradient-blue: linear-gradient(135deg, #00f2ff 0%, #0066ff 100%);
+  --bg-dark: #f5f9f5;
+  --bg-card: #ffffff;
+  --primary: #C8956E; /* Brown/Tan */
+  --primary-glow: rgba(200, 149, 110, 0.4);
+  --secondary: #9FD8A4; /* Mint green */
+  --secondary-glow: rgba(159, 216, 164, 0.3);
+  --accent-yellow: #F5E6B3; /* Light yellow/cream */
+  --text-main: #1a1a1a;
+  --text-muted: #4a4a4a;
+  --gradient-gold: linear-gradient(135deg, #C8956E 0%, #D4A574 100%);
+  --gradient-green: linear-gradient(135deg, #9FD8A4 0%, #7BC47F 100%);
   
   /* Spacing */
   --section-padding: 80px 20px;
@@ -82,7 +83,7 @@ ul {
   display: inline-block;
   padding: 12px 30px;
   background: var(--gradient-gold);
-  color: #000;
+  color: #fff;
   font-weight: 700;
   border-radius: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -93,7 +94,7 @@ ul {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 20px rgba(200, 149, 110, 0.3);
 }
 
 /* Animations classes can be added here or handled by anime.js */

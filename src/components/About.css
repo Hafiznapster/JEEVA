@@ -1,6 +1,6 @@
 .about-section {
     padding: var(--section-padding);
-    background-color: var(--bg-dark);
+    background-color: #ffffff;
     position: relative;
 }
 
@@ -12,7 +12,7 @@
 
 .about-header p {
     font-size: 1.1rem;
-    color: var(--text-muted);
+    color: #4a4a4a;
     line-height: 1.8;
 }
 
@@ -26,7 +26,7 @@
     background: var(--bg-card);
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(159, 216, 164, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     overflow: hidden;
@@ -47,7 +47,7 @@
 
 .about-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(159, 216, 164, 0.2);
 }
 
 .about-card:hover::before {
@@ -57,11 +57,12 @@
 .about-card h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    color: var(--text-main);
+    color: #1a1a1a;
+    font-weight: 600;
 }
 
 .about-card p {
-    color: var(--text-muted);
+    color: #4a4a4a;
     line-height: 1.6;
 }
 

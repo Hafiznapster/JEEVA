@@ -1,6 +1,6 @@
 .contact-section {
     padding: var(--section-padding);
-    background: radial-gradient(circle at bottom left, #1a1c30 0%, #050510 50%);
+    background: linear-gradient(135deg, #fff9e6 0%, #f5f9f5 100%);
 }
 
 .contact-container {
@@ -18,12 +18,14 @@
 .contact-info h3 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #fff;
+    color: #1a1a1a;
+    font-weight: 700;
 }
 
 .contact-info p {
-    color: var(--text-muted);
+    color: #4a4a4a;
     margin-bottom: 40px;
+    line-height: 1.6;
 }
 
 .info-item {
@@ -31,13 +33,15 @@
     align-items: center;
     margin-bottom: 20px;
     font-size: 1.1rem;
+    color: #2d2d2d;
+    font-weight: 500;
 }
 
 .info-icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--accent-yellow);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +56,7 @@
     background: var(--bg-card);
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(159, 216, 164, 0.2);
 }
 
 .form-group {
@@ -62,19 +66,26 @@
 .form-group label {
     display: block;
     margin-bottom: 10px;
-    color: var(--text-muted);
+    color: #4a4a4a;
+    font-weight: 500;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 15px;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #f5f9f5;
+    border: 1px solid rgba(159, 216, 164, 0.3);
     border-radius: 10px;
-    color: #fff;
+    color: #2d2d2d;
     font-family: var(--font-main);
     transition: border 0.3s;
+    font-size: 1rem;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
 }
 
 .form-group input:focus,
@@ -84,3 +95,17 @@
 }
 
 /* Footer in separate file usually, but minimal styles here if needed */
+
+
+.info-value {
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.info-item span {
+    color: #4a4a4a;
+    font-size: 0.9rem;
+    display: block;
+}
