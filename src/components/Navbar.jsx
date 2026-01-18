@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -20,8 +22,13 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    };
+
     const handleNavClick = (e, id) => {
         e.preventDefault();
+        setMobileMenuOpen(false);
         if (location.pathname === '/') {
             const element = document.getElementById(id);
             if (element) {
@@ -47,12 +54,17 @@ const Navbar = () => {
     }, [location]);
 
     return (
-        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+        <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
             <div className="container">
-                <Link to="/" className="logo cursor-scale">
+                <Link to="/" className="logo cursor-scale" onClick={() => setMobileMenuOpen(false)}>
                     <img src="/vertex-logo.png" alt="Vertex - The Career Expert" className="logo-img" />
                 </Link>
-                <ul className="nav-links">
+
+                <div className="hamburger cursor-scale" onClick={toggleMobileMenu}>
+                    {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+                </div>
+
+                <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
                     <li><a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="nav-link cursor-scale">Home</a></li>
                     <li><a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="nav-link cursor-scale">About</a></li>
                     <li><a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="nav-link cursor-scale">Services</a></li>
