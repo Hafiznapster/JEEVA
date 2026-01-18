@@ -52,7 +52,7 @@
     background: var(--bg-card);
     padding: 20px 40px;
     border-radius: 50px;
-    border: 1px solid rgba(159, 216, 164, 0.3);
+    border: 1px solid var(--secondary-glow);
     white-space: nowrap;
     font-weight: 600;
     color: #2d2d2d;

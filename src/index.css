@@ -2,17 +2,17 @@
 
 :root {
   /* Colors */
-  --bg-dark: #f5f9f5;
+  --bg-dark: #f0f4f8;
   --bg-card: #ffffff;
-  --primary: #C8956E; /* Brown/Tan */
-  --primary-glow: rgba(200, 149, 110, 0.4);
-  --secondary: #9FD8A4; /* Mint green */
-  --secondary-glow: rgba(159, 216, 164, 0.3);
-  --accent-yellow: #F5E6B3; /* Light yellow/cream */
+  --primary: #1a56a6; /* Vertex Blue */
+  --primary-glow: rgba(26, 86, 166, 0.4);
+  --secondary: #39b54a; /* Vertex Green */
+  --secondary-glow: rgba(57, 181, 74, 0.3);
+  --accent-yellow: #e8f5e9; /* Light Mint */
   --text-main: #1a1a1a;
   --text-muted: #4a4a4a;
-  --gradient-gold: linear-gradient(135deg, #C8956E 0%, #D4A574 100%);
-  --gradient-green: linear-gradient(135deg, #9FD8A4 0%, #7BC47F 100%);
+  --gradient-primary: linear-gradient(135deg, #1a56a6 0%, #113d7a 100%);
+  --gradient-green: linear-gradient(135deg, #39b54a 0%, #2e8b37 100%);
   
   /* Spacing */
   --section-padding: 80px 20px;
@@ -74,7 +74,7 @@ ul {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 20px;
-  background: var(--gradient-gold);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -82,7 +82,7 @@ ul {
 .btn {
   display: inline-block;
   padding: 12px 30px;
-  background: var(--gradient-gold);
+  background: var(--gradient-primary);
   color: #fff;
   font-weight: 700;
   border-radius: 30px;
@@ -94,7 +94,7 @@ ul {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(200, 149, 110, 0.3);
+  box-shadow: 0 10px 20px rgba(26, 86, 166, 0.3);
 }
 
 /* Animations classes can be added here or handled by anime.js */

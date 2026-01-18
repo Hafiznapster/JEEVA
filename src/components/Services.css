@@ -1,6 +1,6 @@
 .services-section {
     padding: var(--section-padding);
-    background-color: #fff9e6;
+    background-color: #e3f2fd;
     /* Light yellow background */
 }
 
@@ -16,11 +16,11 @@
     border-radius: 20px;
     text-align: center;
     transition: all 0.4s ease;
-    border: 1px solid rgba(159, 216, 164, 0.2);
+    border: 1px solid var(--secondary-glow);
 }
 
 .service-card:hover {
-    background: #f5f9f5;
+    background: #f0f4f8;
     border-color: var(--secondary);
     transform: translateY(-10px);
 }

@@ -1,6 +1,6 @@
 .courses-section {
     padding: var(--section-padding);
-    background-color: #f5f9f5;
+    background-color: #f0f4f8;
 }
 
 .courses-grid {
@@ -15,7 +15,7 @@
     margin-bottom: 30px;
     /* For masonry effect */
     break-inside: avoid;
-    border: 1px solid rgba(159, 216, 164, 0.2);
+    border: 1px solid var(--secondary-glow);
     transition: transform 0.3s;
 }
 
@@ -28,7 +28,7 @@
     font-size: 1.5rem;
     color: var(--primary);
     margin-bottom: 20px;
-    border-bottom: 1px solid rgba(159, 216, 164, 0.3);
+    border-bottom: 1px solid var(--secondary-glow);
     padding-bottom: 15px;
 }
 
