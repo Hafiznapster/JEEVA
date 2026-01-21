@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './Colleges.css';
+import yeldoImg from '../assets/yeldo-mar-baselios.jpg';
+import alAzharImg from '../assets/al-azhar.png';
+import jaiBharathImg from '../assets/jai-bharath.jpg';
 
 const CollegeListPage = () => {
     const { location } = useParams();
@@ -12,21 +15,21 @@ const CollegeListPage = () => {
 
     const collegeData = {
         kerala: [
-            "Telko Mar Baselios College",
-            "Al-Azhar",
-            "Jai Bharath",
-            "ELMS",
-            "Al-Ameen",
-            "Alshifa College of Arts & Science",
-            "Naipunnya",
-            "Nagasariga",
-            "KMCT",
-            "Sivam College",
-            "KMT (Institute of Paramedical Sciences)",
-            "Rims Knowledge City",
-            "Mount Zion",
-            "ICCS",
-            "MES College Erumely"
+            { name: "Yeldo Mar Baselios College", image: yeldoImg },
+            { name: "Al-Azhar", image: alAzharImg },
+            { name: "Jai Bharath", image: jaiBharathImg },
+            { name: "ELMS", image: null },
+            { name: "Al-Ameen", image: null },
+            { name: "Alshifa College of Arts & Science", image: null },
+            { name: "Naipunnya", image: null },
+            { name: "Nagasariga", image: null },
+            { name: "KMCT", image: null },
+            { name: "Sivam College", image: null },
+            { name: "KMT (Institute of Paramedical Sciences)", image: null },
+            { name: "Rims Knowledge City", image: null },
+            { name: "Mount Zion", image: null },
+            { name: "ICCS", image: null },
+            { name: "MES College Erumely", image: null }
         ],
         bangalore: []
     };
@@ -50,11 +53,16 @@ const CollegeListPage = () => {
                         currentData.map((college, index) => (
                             <div key={index} className="college-card cursor-scale">
                                 <div className="card-inner">
-                                    <div className="card-image-placeholder">
-                                        {/* Image placeholder */}
+                                    <div
+                                        className={`card-image-placeholder ${college.image ? 'has-image' : ''}`}
+                                        style={college.image ? { backgroundImage: `url(${college.image})` } : {}}
+                                    >
+                                        {!college.image && (
+                                            <div className="placeholder-pattern"></div>
+                                        )}
                                     </div>
                                     <div className="card-content">
-                                        <h3>{college}</h3>
+                                        <h3>{college.name}</h3>
                                         <p>{locationName}</p>
                                     </div>
                                 </div>

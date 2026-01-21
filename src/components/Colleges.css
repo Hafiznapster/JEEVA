@@ -30,7 +30,7 @@
 }
 
 .bangalore-card {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&q=80&w=1000');
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&q=80&w=1000');
     background-size: cover;
     background-position: center;
 }
@@ -51,7 +51,7 @@
     font-size: 2.5rem;
     margin-bottom: 10px;
     font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .gateway-overlay p {
@@ -149,6 +149,8 @@
     height: 200px;
     background: linear-gradient(135deg, #eee 0%, #ddd 100%);
     position: relative;
+    background-size: cover;
+    background-position: center;
 }
 
 .card-image-placeholder::after {
@@ -159,6 +161,18 @@
     transform: translate(-50%, -50%);
     color: #999;
     font-weight: 500;
+}
+
+.card-image-placeholder.has-image::after {
+    display: none;
+}
+
+.placeholder-pattern {
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: radial-gradient(#000 1px, transparent 1px);
+    background-size: 10px 10px;
 }
 
 .card-content {
@@ -200,12 +214,12 @@
     .colleges-section {
         padding: 60px 0;
     }
-    
+
     .colleges-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-    
+
     .college-card {
         height: 250px;
     }
@@ -232,7 +246,7 @@
     .colleges-grid {
         gap: 10px;
     }
-    
+
     .college-card {
         height: 220px;
     }
