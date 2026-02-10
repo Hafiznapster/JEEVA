@@ -6,6 +6,7 @@ import './Navbar.css';
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('home');
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -15,6 +16,22 @@ const Navbar = () => {
                 setScrolled(true);
             } else {
                 setScrolled(false);
+            }
+
+            // Track active section
+            const sections = ['home', 'about', 'services', 'courses', 'partners', 'colleges', 'contact'];
+            const scrollPosition = window.scrollY + 200;
+
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const offsetTop = element.offsetTop;
+                    const offsetHeight = element.offsetHeight;
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        setActiveSection(section);
+                        break;
+                    }
+                }
             }
         };
 
@@ -65,12 +82,12 @@ const Navbar = () => {
                 </div>
 
                 <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
-                    <li><a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="nav-link cursor-scale">Home</a></li>
-                    <li><a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="nav-link cursor-scale">About</a></li>
-                    <li><a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="nav-link cursor-scale">Services</a></li>
-                    <li><a href="#courses" onClick={(e) => handleNavClick(e, 'courses')} className="nav-link cursor-scale">Courses</a></li>
-                    <li><a href="#partners" onClick={(e) => handleNavClick(e, 'partners')} className="nav-link cursor-scale">Partners</a></li>
-                    <li><a href="#colleges" onClick={(e) => handleNavClick(e, 'colleges')} className="nav-link cursor-scale">Colleges</a></li>
+                    <li><a href="#home" onClick={(e) => handleNavClick(e, 'home')} className={`nav-link cursor-scale ${activeSection === 'home' ? 'active' : ''}`}>Home</a></li>
+                    <li><a href="#about" onClick={(e) => handleNavClick(e, 'about')} className={`nav-link cursor-scale ${activeSection === 'about' ? 'active' : ''}`}>About</a></li>
+                    <li><a href="#services" onClick={(e) => handleNavClick(e, 'services')} className={`nav-link cursor-scale ${activeSection === 'services' ? 'active' : ''}`}>Services</a></li>
+                    <li><a href="#courses" onClick={(e) => handleNavClick(e, 'courses')} className={`nav-link cursor-scale ${activeSection === 'courses' ? 'active' : ''}`}>Courses</a></li>
+                    <li><a href="#partners" onClick={(e) => handleNavClick(e, 'partners')} className={`nav-link cursor-scale ${activeSection === 'partners' ? 'active' : ''}`}>Partners</a></li>
+                    <li><a href="#colleges" onClick={(e) => handleNavClick(e, 'colleges')} className={`nav-link cursor-scale ${activeSection === 'colleges' ? 'active' : ''}`}>Colleges</a></li>
                     <li><a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="nav-cta cursor-scale">Contact Us</a></li>
                 </ul>
             </div>

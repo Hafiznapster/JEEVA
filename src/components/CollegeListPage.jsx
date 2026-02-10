@@ -12,6 +12,22 @@ import mountZionImg from '../assets/mount-zion.jpg';
 import iccsImg from '../assets/iccs.jpg';
 import alshifaImg from '../assets/alshifa.jpg';
 import mesErumelyImg from '../assets/mes-erumely.jpg';
+import elmsImg from '../assets/elms-thrissur.png';
+
+// Bangalore colleges
+import sapthagiriImg from '../assets/bangalore-sapthagiri.jpg';
+import krupanidhiImg from '../assets/bangalore-krupanidhi.webp';
+import sambhramImg from '../assets/bangalore-sambhram.jpg';
+import presidencyImg from '../assets/bangalore-presidency.jpg';
+import koshysImg from '../assets/bangalore-koshys.webp';
+import hkbkImg from '../assets/bangalore-hkbk.jpg';
+import sriDevarajUrsImg from '../assets/bangalore-sri-devaraj-urs.png';
+
+// Mangalore colleges
+import srinivasImg from '../assets/mangalore-srinivas.jpg';
+import yenapoyaImg from '../assets/mangalore-yenapoya.jpg';
+import ajInstituteImg from '../assets/mangalore-aj-institute.jpg';
+import manipalImg from '../assets/mangalore-manipal.jpg';
 
 // Skeleton Card Component
 const SkeletonCard = () => (
@@ -37,7 +53,7 @@ const EmptyStateCard = ({ name }) => (
 );
 
 // College Card Component
-const CollegeCard = ({ college, index }) => {
+const CollegeCard = ({ college, index, locationName }) => {
     const [imageLoaded, setImageLoaded] = useState(false);
     const [imageError, setImageError] = useState(false);
 
@@ -67,7 +83,7 @@ const CollegeCard = ({ college, index }) => {
                     <h3>{college.name}</h3>
                     <div className="college-location">
                         <FiMapPin className="location-icon" />
-                        <span>Kerala</span>
+                        <span>{college.location || locationName}</span>
                     </div>
                 </div>
             </div>
@@ -184,7 +200,7 @@ const CollegeListPage = () => {
             { name: "Yeldo Mar Baselios College", image: yeldoImg },
             { name: "Al-Azhar", image: alAzharImg },
             { name: "Jai Bharath", image: jaiBharathImg },
-            { name: "ELMS", image: null },
+            { name: "ELMS College of Nursing, Thrissur", image: elmsImg },
             { name: "Al-Ameen", image: alAmeenImg },
             { name: "Alshifa College of Arts & Science", image: alshifaImg },
             { name: "Naipunnya", image: naipunyaImg },
@@ -197,7 +213,22 @@ const CollegeListPage = () => {
             { name: "ICCS", image: iccsImg },
             { name: "MES College Erumely", image: mesErumelyImg }
         ],
-        bangalore: []
+        bangalore: [
+            { name: "Sapthagiri College of Engineering", image: sapthagiriImg },
+            { name: "Krupanidhi College", image: krupanidhiImg },
+            { name: "Sambhram Institute of Technology (SAIT)", image: sambhramImg },
+            { name: "Presidency University", image: presidencyImg },
+            { name: "Koshys Group of Institutions (KGI)", image: koshysImg },
+            { name: "HKBK College of Engineering", image: hkbkImg },
+            { name: "Sri Devaraj Urs Medical College", image: sriDevarajUrsImg }
+        ],
+        mangalore: [
+            { name: "Srinivas University", image: srinivasImg },
+            { name: "Yenapoya University", image: yenapoyaImg },
+            { name: "A.J. Institute of Medical Sciences and Research Centre", image: ajInstituteImg },
+            { name: "Manipal Academy of Higher Education (MAHE)", image: manipalImg },
+            { name: "Nitte Meenakshi Institute of Technology (NMIT)", image: null }
+        ]
     };
 
     const currentData = collegeData[location.toLowerCase()] || [];
@@ -235,39 +266,40 @@ const CollegeListPage = () => {
                 </div>
             </div>
 
-            {/* Main Content - Split Layout */}
+            {/* Main Content */}
             <div className="college-content">
-                <div className="split-layout">
-                    {/* Left Side - Scrollable College List */}
-                    <div className="colleges-list-section">
-                        <div className="list-header">
-                            <h2>Available Colleges</h2>
-                            <span className="results-count">
-                                {filteredColleges.length} result{filteredColleges.length !== 1 ? 's' : ''}
-                            </span>
+                <div className="container">
+                    {/* Stats Bar */}
+                    <div className="stats-bar">
+                        <div className="stat-item">
+                            <span className="stat-value">{filteredColleges.length}</span>
+                            <span className="stat-label">Colleges</span>
                         </div>
-                        
-                        <div className="colleges-grid">
-                            {isLoading ? (
-                                // Show skeleton cards while loading
-                                [...Array(6)].map((_, index) => <SkeletonCard key={index} />)
-                            ) : filteredColleges.length > 0 ? (
-                                filteredColleges.map((college, index) => (
-                                    <CollegeCard key={index} college={college} index={index} />
-                                ))
-                            ) : (
-                                <div className="no-results">
-                                    <FiSearch className="no-results-icon" />
-                                    <h3>No colleges found</h3>
-                                    <p>Try adjusting your search terms</p>
-                                </div>
-                            )}
+                        <div className="stat-item">
+                            <span className="stat-value">{filteredColleges.filter(c => c.image).length}</span>
+                            <span className="stat-label">With Photos</span>
+                        </div>
+                        <div className="stat-item">
+                            <span className="stat-value">{locationName}</span>
+                            <span className="stat-label">Location</span>
                         </div>
                     </div>
 
-                    {/* Right Side - Sticky Map */}
-                    <div className="map-section">
-                        <DecorativeMap colleges={filteredColleges} />
+                    {/* Colleges Grid */}
+                    <div className="colleges-grid-full">
+                        {isLoading ? (
+                            [...Array(6)].map((_, index) => <SkeletonCard key={index} />)
+                        ) : filteredColleges.length > 0 ? (
+                            filteredColleges.map((college, index) => (
+                                <CollegeCard key={index} college={college} index={index} locationName={locationName} />
+                            ))
+                        ) : (
+                            <div className="no-results">
+                                <FiSearch className="no-results-icon" />
+                                <h3>No colleges found</h3>
+                                <p>Try adjusting your search terms</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

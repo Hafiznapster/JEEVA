@@ -31,6 +31,16 @@ const Colleges = () => {
                             </div>
                         </div>
                     </Link>
+
+                    <Link to="/colleges/mangalore" className="location-gateway-card cursor-scale">
+                        <div className="gateway-card-inner mangalore-card">
+                            <div className="gateway-overlay">
+                                <h3>Mangalore</h3>
+                                <p>Explore Institutions in Mangalore</p>
+                                <span className="explore-btn">Explore Now</span>
+                            </div>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </section>
