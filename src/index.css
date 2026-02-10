@@ -13,6 +13,13 @@
   --text-muted: #4a4a4a;
   --gradient-primary: linear-gradient(135deg, #1a56a6 0%, #113d7a 100%);
   --gradient-green: linear-gradient(135deg, #39b54a 0%, #2e8b37 100%);
+  --gradient-hero: linear-gradient(135deg, #f0f4f8 0%, #e8f5e9 50%, #f0f4f8 100%);
+  
+  /* Skeleton & Shadows */
+  --skeleton-base: #e0e0e0;
+  --skeleton-highlight: #f5f5f5;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.15);
   
   /* Spacing */
   --section-padding: 80px 20px;
